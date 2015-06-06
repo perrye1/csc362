@@ -7,7 +7,7 @@ int main()
 	char last_alpha;
 	int cap_flag = 1;
 	FILE *fp1, *fp2;		            // fp1 points to the input file, fp2 points to the output file
-	fp1 = fopen("input3.txt", "r");	    // open input file, read-only
+	fp1 = fopen("input1.txt", "r");	    // open input file, read-only
 	fp2 = fopen("output1.txt", "w");	// open output file, write-only
 
 	while ((c = getc(fp1)) != -1)            // get next char from input file, store in x, until we reach EOF
