@@ -5,12 +5,14 @@ int main()
 {
 	char c;
 	char last_alpha;
+	char in_file[] = "input1.txt";
+	char out_file[] = "output1.txt";
 	int cap_flag = 1;
-	int in_count;
-	int out_count;
+	int in_count =0;
+	int out_count =  0;
 	FILE *fp1, *fp2;		            // fp1 points to the input file, fp2 points to the output file
-	fp1 = fopen("input2.txt", "r");	    // open input file, read-only
-	fp2 = fopen("output1.txt", "w");	// open output file, write-only
+	fp1 = fopen(in_file, "r");	    // open input file, read-only
+	fp2 = fopen(out_file, "w");	// open output file, write-only
 
 	while ((c = getc(fp1)) != -1)            // get next char from input file, store in x, until we reach EOF
 	{
@@ -52,5 +54,11 @@ int main()
 		}
 
 	}
+
+	printf("Input File: %s\n", in_file);
+	printf("Output File: %s\n", out_file);
+	printf("Number of input characters: %d\n", in_count);
+	printf("Number of output characters: %d\n", out_count);
+	printf("Percent reduction in output: %.2f%%\n", 100*((double)out_count/in_count));
 }
 
