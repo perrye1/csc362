@@ -1,0 +1,17 @@
+Input File: input1.txt
+Output File: output1.txt
+Number of input characters: 94
+Number of output characters: 38
+Percent reduction in output: 40.43%
+
+Input File: input2.txt
+Output File: output1.txt
+Number of input characters: 347
+Number of output characters: 154
+Percent reduction in output: 44.38%
+
+Input File: input3.txt
+Output File: output1.txt
+Number of input characters: 726
+Number of output characters: 672
+Percent reduction in output: 92.56%

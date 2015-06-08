@@ -12,7 +12,7 @@ int main()
 {
 	char c;									// holds the current character
 	char last_alpha;						// holds the last character that is a letter
-	char in_file[] = "input2.txt";			// the input file
+	char in_file[] = "input3.txt";			// the input file
 	char out_file[] = "output1.txt";		// the output file
 	int cap_flag = 1;						// flag to determine if a capital letter should be ouput (after a period) 
 	int in_count =0;						// counter for the number of input letters
