@@ -45,7 +45,7 @@ int main()
 				if (isupper(last_alpha))
 				{
 					putc(c, fp2);
-					out_count++;			// if c is a lowercase letter, and the last letter was uppercase , output the character to the output file ad increment the output count. 
+					out_count++;			// if c is a lowercase letter, and the last letter was uppercase , output the character to the output file and increment the output count. 
 				}
 			}
 			last_alpha = c;					// if c is a letter, set the last letter variable to the current character
@@ -56,7 +56,7 @@ int main()
 			out_count++;					// if c is not a letter, output it and increment the output count
 			if (c == '.')
 			{
-				cap_flag = 1;				// if c is a period, the next letter should be output as uppercase, so set the cap_flag
+				cap_flag = 1;				// if c is a period, the next uppercase letter should be output as uppercase, so set the cap_flag
 			}
 		}
 
