@@ -1,0 +1,11 @@
+Student: Frank Zappa has average of 77.50% and grade of C
+Student: Ruth Underwood has average of 86.46% and grade of B
+Student: George Duke has average of 63.75% and grade of D
+Student: Mike Keneally has average of 66.35% and grade of D
+Student: Suzie Creamcheese has average of 72.08% and grade of C
+Error attempting to read line 6, skipping record
+Student: Chester Thompson has average of 54.58% and grade of F
+Student: Thana Harris has average of 71.25% and grade of C
+Of -858993460 students, the average grade is -4718592%
+The number of students passing is -858993460
+The number of students failing is -858993460
