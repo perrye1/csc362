@@ -24,7 +24,7 @@ void main(){
 		}
 		else
 		{
-			printf("There was an error reading a line; the line has been skipped");
+			fprintf(fp_out, "Error attempting to read line %d, skipping record", i);
 		}
 		
 	}
