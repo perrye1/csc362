@@ -43,7 +43,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\da_perrye1\Documents\GitHubVisualStudio\csc362\PR_Assignment_2\PR_Assignment_2;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\da_perrye1\Documents\GitHubVisualStudio\csc362\PR_Assignment_2\PR_Assignment_2;C:\Users\perrye1.PERRY\Documents\GitHubVisualStudio\csc362\PR_Assignment_2\PR_Assignment_2;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
