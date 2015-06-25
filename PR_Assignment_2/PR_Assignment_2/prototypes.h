@@ -1,8 +1,8 @@
 #include<stdio.h>			// for standard input output operations like scanf, printf, fscanf, and fprintf
 #include<string.h>			// for string operations like strcpy and strcmp
 
-#define WEIGHT1 .25			// grade weights defined as constants
-#define WEIGHT2 .25
+#define WEIGHT1 .2			// grade weights defined as constants
+#define WEIGHT2 .3
 #define WEIGHT3 .5
 
 // the function prototypes for this project

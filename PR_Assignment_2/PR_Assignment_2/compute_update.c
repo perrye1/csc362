@@ -31,7 +31,6 @@ void computeGrade(int h1, int h2, int h3, int h4, int p1, int p2, int p3, int p4
 void update(double average, int *total_students, double *total_average, int *total_passing, int *total_failing, char *letter_grade)
 {
 	*total_students+=1;
-	printf("%d", *total_students);
 	*total_average = *total_average + average;
 	if (strcmp(letter_grade, "F"))			// since a student can have a passing average, but still fail the class (see function computeGrade), we need to update the pass/fail numbers using the letter grades instead of the averages
 	{

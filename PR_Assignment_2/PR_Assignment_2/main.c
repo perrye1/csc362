@@ -1,4 +1,4 @@
-// NAME:		Ethan Perry
+// NAME:	Ethan Perry
 // CLASS:	CSC362
 // DUE:		6/25/15
 
@@ -43,4 +43,6 @@ void main(){
 		
 	}
 	summarize(fp_out, total_students, total_average, total_passing, total_failing);								// writes out a summary statement to the end of the output file, with the overall average, and pass/fail numbers
+	fclose(fp_in);																								// close the input file
+	fclose(fp_out);																								// close the output file
 }
