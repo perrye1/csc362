@@ -1,3 +1,8 @@
+// NAME:	Ethan Perry
+// CLASS:	CSC362
+// DUE:		6/25/15
+// FILE:	io_summary.c
+
 #include<prototypes.h>		// include the header file that contains the function declarations and constants
 
 // uses fscanf to input the needed parameters from the file, and returns the number of successfuly input params

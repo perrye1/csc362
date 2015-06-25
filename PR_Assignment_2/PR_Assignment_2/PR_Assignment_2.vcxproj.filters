@@ -37,7 +37,10 @@
     <Text Include="grades2.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="output.txt">
+    <Text Include="output1.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="output2.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>
