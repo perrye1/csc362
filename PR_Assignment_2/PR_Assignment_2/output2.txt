@@ -1,0 +1,17 @@
+Student: Stan Marsh has average of 87.42% and grade of B
+Student: Kyl Broflovski has average of 83.78% and grade of B
+Student: Eric Cartman has average of 57.28% and grade of F
+Student: Kenny McCormick has average of 78.40% and grade of C
+Student: Wendy Testaburger has average of 92.77% and grade of A
+Student: Butters Stotch has average of 66.25% and grade of D
+Student: Bebe Stevens has average of 93.63% and grade of A
+Error attempting to read line 8, skipping record
+Student: Allie Nelson has average of 79.52% and grade of A
+Student: Jimmy Valmer has average of 86.50% and grade of F
+Student: Token Black has average of 83.93% and grade of B
+Student: Emily Marx has average of 84.85% and grade of B
+Error attempting to read line 13, skipping record
+Student: Clyde Donovan has average of 78.12% and grade of C
+Of 12 students, the average grade is 81.04%
+The number of students passing is 10
+The number of students failing is 2

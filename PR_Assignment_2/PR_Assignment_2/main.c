@@ -1,6 +1,7 @@
 // NAME:	Ethan Perry
 // CLASS:	CSC362
 // DUE:		6/25/15
+// FILE:	main.c
 
 // This program takes in an input file containing student's individual grades, and outputs a list of the student's averages and letter grades
 // It also provides a summary, listing the overall class average, and number of students that passed/failed. 
@@ -8,8 +9,8 @@
 #include <prototypes.h>						// include the header file that contains the function declarations and constants 
 
 void main(){
-	char in_file[] = "grades1.txt";			// the input file
-	char out_file[] = "output.txt";			// the output file
+	char in_file[] = "grades2.txt";			// the input file
+	char out_file[] = "output2.txt";			// the output file
 	FILE *fp_in;							// fp_in points to the input file
 	FILE *fp_out;							// fp_out points to the output file
 	int file_length;						// stores the length of the file (lines)

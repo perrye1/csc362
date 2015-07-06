@@ -1,3 +1,8 @@
+// NAME:	Ethan Perry
+// CLASS:	CSC362
+// DUE:		6/25/15
+// FILE:	prototypes.h
+
 #include<stdio.h>			// for standard input output operations like scanf, printf, fscanf, and fprintf
 #include<string.h>			// for string operations like strcpy and strcmp
 

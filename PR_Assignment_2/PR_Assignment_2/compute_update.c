@@ -1,3 +1,8 @@
+// NAME:	Ethan Perry
+// CLASS:	CSC362
+// DUE:		6/25/15
+// FILE:	compute_update.c
+
 #include<prototypes.h>		// include the header file that contains the function declarations and constants
 
 // computes the student's letter grade and average based on the individual scores, and the WEIGHT constants
