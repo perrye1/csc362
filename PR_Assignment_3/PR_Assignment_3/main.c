@@ -45,9 +45,14 @@ int move(char *p, char *p_opp, char *board)
 	printf("rolled %d...",dice_roll);
 	if (p >= board && p < board + 100)
 	{
-		if (*p == 'B' || *p == 'F')
+		if (p == p_opp)
 		{
-			p += find_haven(p);
+			printf("collision...moving back %d...", 1);
+			p = p - 1;
+		}
+		else if (*p == 'B' || *p == 'F')
+		{
+			p += find_haven(p, board);
 		}
 		else if(*p <= 122 && *p >= 97 && *p != 110)
 		{
@@ -60,8 +65,14 @@ int move(char *p, char *p_opp, char *board)
 			{
 				printf("landed on a ladder...moving %d...", sub_move);
 			}
+			*p = '*';
 			p = p + sub_move;
 		}
+	}
+	if (p == p_opp)
+	{
+		printf("collision...moving back %d...", 1);
+		p = p - 1;
 	}
 	printf("now at %d\n",p-board);
 	return p;
@@ -88,28 +99,43 @@ void printBoard(FILE *fp_out, char *a, char *p1, char *p2)	// print the string p
 	putc('\n', fp_out);						// go to the next line
 }
 
-int find_haven(char *p)
+int find_haven(char *p, char *board)
 {
 	int count = 0;
 	if (*p == 'B')
 	{
-		while (*p != 'H')
+		while (*p != 'H' && p != board)
 		{
 			p = p - 1;
 			count = count - 1;
 		}
-		*p = '_';
-		printf("Moving backward to haven...");
+		printf("moving backward to haven...");
+		if (p == board)
+		{
+			printf("no havens left...");
+		}
+		else 
+		{
+			*p = '_';
+		}
 	}
 	else 
 	{
-		while (*p != 'H')
+		while (*p != 'H' && p != board + 100)
 		{
 			p = p + 1;
 			count = count + 1;
 		}
-		*p = '_';
-		printf("Moving forward to haven...");
+		printf("moving forward to haven...");
+		if (p == board+100)
+		{
+			printf("no havens left...");
+			count = 0;
+		}
+		else
+		{
+			*p = '_';
+		}
 	}
 	return count;
 }
