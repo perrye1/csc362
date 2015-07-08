@@ -9,7 +9,7 @@
 
 void printBoard(FILE *fp_out, char *a, char *p1, char *p2);		// print the board after every turn, showing the changes
 int move(char *p, char *p_opp, char *board);					// moves the player through the board
-int find_haven(char *p, char *board);							// finds the next haven on the board, either forward or backward
+int findHaven(char *p, char *board);							// finds the next haven on the board, either forward or backward
 
 void main() 
 {
@@ -42,23 +42,23 @@ void main()
 
 int move(char *p, char *p_opp, char *board)						// moves the player through the board
 {
-	int dice_roll = rand() % 6 + 1;
+	int dice_roll = rand() % 6 + 1;								// simulate a dice roll
 	p=p+dice_roll;
 	printf("rolled %d...",dice_roll);
-	if (p >= board && p < board + 100)
+	if (p >= board && p < board + 100)							// make sure the player is still on the board
 	{
-		if (p == p_opp)
+		if (p == p_opp)											// check if there is a collision between players
 		{
 			printf("collision...moving back %d...", 1);
 			p = p - 1;
 		}
-		else if (*p == 'B' || *p == 'F')
+		else if (*p == 'B' || *p == 'F')						// check if the player has landed on a "go to nearest haven" square
 		{
-			p += find_haven(p, board);
+			p += findHaven(p, board);							// call the findHaven function to find the nearest haven
 		}
-		else if(*p <= 122 && *p >= 97 && *p != 110)
+		else if(*p <= 122 && *p >= 97 && *p != 110)				// check if the player has landed on a chute or a ladder
 		{
-			int sub_move = (int)(*p - 110);
+			int sub_move = (int)(*p - 110);						// subtract the asci value of the chute or ladder symbol to determine how far to move
 			if (sub_move < 0)
 			{
 				printf("landed on a chute...moving %d...", sub_move);
@@ -67,11 +67,11 @@ int move(char *p, char *p_opp, char *board)						// moves the player through the
 			{
 				printf("landed on a ladder...moving %d...", sub_move);
 			}
-			*p = '*';
+			*p = '*';											// "remove" the chute or ladder by replacing it with an *
 			p = p + sub_move;
 		}
 	}
-	if (p == p_opp)
+	if (p == p_opp)												// check again for a collision, after we have moved the player
 	{
 		printf("collision...moving back %d...", 1);
 		p = p - 1;
@@ -80,63 +80,63 @@ int move(char *p, char *p_opp, char *board)						// moves the player through the
 	return p;
 }
 
-void printBoard(FILE *fp_out, char *a, char *p1, char *p2)	// print the board after every turn, showing the changes
+void printBoard(FILE *fp_out, char *a, char *p1, char *p2)		// print the board after every turn, showing the changes
 {
-	while (*a != '\0')										// while we haven't hit the end of the string
+	while (*a != '\0')											// while we haven't hit the end of the string
 	{
 		if (a == p1)
 		{
-			putc('1', fp_out);								// if the current character is where the player 1 is, print a 1
+			putc('1', fp_out);									// if the current character is where the player 1 is, print a 1
 		}
 		else if (a == p2)
 		{
-			putc('2', fp_out);								// if the current character is where the player 2 is, print a 2
+			putc('2', fp_out);									// if the current character is where the player 2 is, print a 2
 		}
 		else 
 		{
-			putc(*a, fp_out);								// print the current character
+			putc(*a, fp_out);									// print the current character
 		}
-		a++;												// move on to the next character of a
+		a++;													// move on to the next character of a
 	}
-	putc('\n', fp_out);										// go to the next line
+	putc('\n', fp_out);											// go to the next line
 }
 
-int find_haven(char *p, char *board)						// finds the next haven on the board, either forward or backward
+int findHaven(char *p, char *board)								// finds the next haven on the board, either forward or backward
 {
 	int count = 0;
-	if (*p == 'B')
+	if (*p == 'B')												// check if this is a directive to move forward or backward to a haven
 	{
-		while (*p != 'H' && p != board)
+		while (*p != 'H' && p != board)							// make sure we are staying on the board
 		{
 			p = p - 1;
 			count = count - 1;
 		}
 		printf("moving backward to haven...");
-		if (p == board)
+		if (p == board)											// if we are at the beginning of the board, there must not have been any havens left
 		{
 			printf("no havens left...");
 		}
-		else 
+		else													// if we did find a haven, remove it so it cant be used again
 		{
 			*p = '_';
 		}
 	}
 	else 
 	{
-		while (*p != 'H' && p != board + 100)
+		while (*p != 'H' && p != board + 100)					// make sure we are staying on the board
 		{
 			p = p + 1;
 			count = count + 1;
 		}
 		printf("moving forward to haven...");
-		if (p == board+100)
+		if (p == board+100)										// if we are at the end of the board, there must not have been any havens left
 		{
 			printf("no havens left...");
 			count = 0;
 		}
 		else
 		{
-			*p = '_';
+			*p = '_';											// if we did find a haven, remove it so it cant be used again
 		}
 	}
 	return count;
