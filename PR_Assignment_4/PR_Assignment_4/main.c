@@ -43,7 +43,7 @@ void main() {
 		notAdd :	mov result, 1		// if the series is not additive, set the result to 1 and jump out
 					jmp xout
 
-		notPrime:	mov result, 2		// if the series is not prime, set the result to 1 and jump out
+		notPrime:	mov result, 2		// if the series is not prime, set the result to 2 and jump out
 					jmp xout
 
 		xout :		nop					// how we break out of the loop
