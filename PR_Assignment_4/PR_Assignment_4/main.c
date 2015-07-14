@@ -1,3 +1,11 @@
+// NAME:	Ethan Perry
+// CLASS:	CSC362
+// DUE:		7/14/15
+
+// This program implements an algorithm in Intel assembly language, to identify a prime increasingly additive sequence.
+// An increasingly additive sequence is one in which the sum of all of the previous numbers in the sequence is less than the next number.
+// This algorithm adds the condition that all the numbers in the sequence must also be prime.
+
 #include <stdio.h>
 
 void main() {
