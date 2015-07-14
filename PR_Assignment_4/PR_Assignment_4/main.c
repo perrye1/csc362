@@ -1,22 +1,20 @@
 #include <stdio.h>
 
 void main() {
-	int sum = 0;
-	int result = 0;
-	int input = 0;
+	int sum = 0;						// holds the sume
+	int result = 0;						// holds the result flag
+	int input = 0;						// holds the current input number
 	__asm {
-		top:		mov eax, 0
+		top:		mov eax, 0			// clear the eax every iteration of the loop
 	}
 	printf("Enter the next input : ");
 	scanf("%d", &input);
 	__asm {
 					// code here to determine whether to exit (if input == 0) or continue
 
-		begin:		mov	eax, input
-					cmp	eax, 0
-					je	xout
-					cmp	eax, sum
-					jg	primeTest
+		begin:		mov	eax, input		// load input into the eax
+					cmp	eax, 0			// compare input to 0
+					je	xout			// if input is 0, jump out
 
 					// code to determine if input is prime 
 
@@ -33,25 +31,25 @@ void main() {
 
 					// code to determine if input is increasingly additive
 
-		isPrime:	mov eax, input
-					mov ebx, sum
-					cmp ebx, eax
-					jge notAdd
-					add ebx, input
-					mov sum, ebx
-					mov result, 0
-					jmp top
+		isPrime:	mov eax, input		// move input to the eax to get ready to compare to sum
+					mov ebx, sum		// move sum to the ebx
+					cmp eax, ebx		// compare the input and the sum
+					jle notAdd			// if the input is less than or equal to the sum, the series is not additive
+					add ebx, input		// else, add the input to the sum
+					mov sum, ebx		// store the sum
+					mov result, 0		// set the result to 0 (good result)
+					jmp top				// jump to the top of the loop
 
-		notAdd :	mov result, 1
+		notAdd :	mov result, 1		// if the series is not additive, set the result to 1 and jump out
 					jmp xout
 
-		notPrime:	mov result, 2
+		notPrime:	mov result, 2		// if the series is not prime, set the result to 1 and jump out
 					jmp xout
 
-		xout :		nop
+		xout :		nop					// how we break out of the loop
 	}
 	if (result == 0) printf("Correct sequence\n");
 	else if (result == 1) printf("Sequence not increasingly additive\n");
-	else printf("Sequence contains non - prime \n");
+	else printf("Sequence contains non-prime \n");
 }
 
