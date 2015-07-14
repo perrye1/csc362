@@ -1,17 +1,34 @@
+// NAME:	Ethan Perry
+// CLASS:	CSC362
+// DUE:		7/14/15
+
+// This program implements the following insertion sort algorithm in Intel assembly language
+
+/*
+for (i = 1;i<n;i++)
+{
+	temp = a[i];
+	location = i - 1;
+	while (location >= 0 && a[location]>temp) {
+		a[location + 1] = a[location];
+		location--;
+	}
+	a[location + 1] = temp;
+}*/
+
 #include <stdio.h>
 
 void main()
 {
-	int a[] = { 100, 99, 97, 95, 90, 87, 86, 83, 81, 77, 74, 69, 63, 50, 44, 43, 39, 31, 29, 12 };
-	int n = 20;
-	int i = 1;
-	int temp = 0;
-	int location = 0;
+	int a[] = { 100, 99, 97, 95, 90, 87, 86, 83, 81, 77, 74, 69, 63, 50, 44, 43, 39, 31, 29, 12 };		// the array to be sorted
+	int n = 20;				// number of vaues in the array
+	int temp = 0;			// a temp variable to store values in when doing swaps
+	int location = 0;		// stores our location in the array
 
 	__asm {
 
-				mov ebx, i				// set ebx to i
-				mov eax, 0
+				mov ebx, 1				// set ebx to 1, this is the for loop iterator
+				mov eax, 0				// clear eax
 		floop:	mov ecx, n				// reset ecx to n every time
 				cmp ebx, ecx			// compare i to n
 				jge fout				// if i is greater than or equal to n, jump out of the for loop
@@ -42,7 +59,7 @@ void main()
 
 	}
 
-	for (i = 1;i < n;i++)
+	for (int i = 1;i < n;i++)			// print out the sorted array
 	{
 		printf("%d,", a[i]);
 	}
